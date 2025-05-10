@@ -1,10 +1,10 @@
 // src/features/transactions/AddTransactionForm.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addTransaction } from '/src/store/transactionsSlice.js';
+import { addTransaction, editTransaction } from '../../store/transactionsSlice';
 import { nanoid } from '@reduxjs/toolkit';
 
-const AddTransactionForm = () => {
+const AddTransactionForm = ({ transactionToEdit = null }) => {
     const dispatch = useDispatch();
     const categories = useSelector(state => state.categories.items);
 
@@ -14,6 +14,16 @@ const AddTransactionForm = () => {
     const [date, setDate] = useState('');
     const [comment, setComment] = useState('');
 
+    useEffect(() => {
+        if (transactionToEdit) {
+            setType(transactionToEdit.type);
+            setAmount(transactionToEdit.amount);
+            setCategory(transactionToEdit.category);
+            setDate(transactionToEdit.date);
+            setComment(transactionToEdit.comment);
+        }
+    }, [transactionToEdit]);
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -22,8 +32,8 @@ const AddTransactionForm = () => {
             return;
         }
 
-        const newTransaction = {
-            id: nanoid(),
+        const transaction = {
+            id: transactionToEdit ? transactionToEdit.id : nanoid(),
             type,
             amount: parseFloat(amount),
             category,
@@ -31,9 +41,13 @@ const AddTransactionForm = () => {
             comment,
         };
 
-        dispatch(addTransaction(newTransaction));
+        if (transactionToEdit) {
+            dispatch(editTransaction(transaction)); // Редактирование существующей транзакции
+        } else {
+            dispatch(addTransaction(transaction)); // Добавление новой транзакции
+        }
 
-        // очистка формы
+        // Очистка формы
         setType('income');
         setAmount('');
         setCategory('');
@@ -45,7 +59,7 @@ const AddTransactionForm = () => {
         <form onSubmit={handleSubmit} className="p-4 border rounded-md space-y-4 bg-gray-50">
             <div>
                 <label className="block mb-1 font-semibold">Тип</label>
-                <select value={type} onChange={e => setType(e.target.value)} className="w-full p-2 border rounded">
+                <select value={type} onChange={(e) => setType(e.target.value)} className="w-full p-2 border rounded">
                     <option value="income">Доход</option>
                     <option value="expense">Расход</option>
                 </select>
@@ -53,31 +67,55 @@ const AddTransactionForm = () => {
 
             <div>
                 <label className="block mb-1 font-semibold">Сумма</label>
-                <input type="number" value={amount} onChange={e => setAmount(e.target.value)} className="w-full p-2 border rounded" />
+                <input
+                    type="number"
+                    value={amount}
+                    onChange={(e) => setAmount(e.target.value)}
+                    className="w-full p-2 border rounded"
+                />
             </div>
 
             <div>
                 <label className="block mb-1 font-semibold">Категория</label>
-                <select value={category} onChange={e => setCategory(e.target.value)} className="w-full p-2 border rounded">
+                <select
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}
+                    className="w-full p-2 border rounded"
+                >
                     <option value="">-- Выберите --</option>
-                    {categories.map(cat => (
-                        <option key={cat.id} value={cat.id}>{cat.name}</option>
+                    {categories.map((cat) => (
+                        <option key={cat.id} value={cat.id}>
+                            {cat.name}
+                        </option>
                     ))}
                 </select>
             </div>
 
             <div>
                 <label className="block mb-1 font-semibold">Дата</label>
-                <input type="date" value={date} onChange={e => setDate(e.target.value)} className="w-full p-2 border rounded" />
+                <input
+                    type="date"
+                    value={date}
+                    onChange={(e) => setDate(e.target.value)}
+                    className="w-full p-2 border rounded"
+                />
             </div>
 
             <div>
                 <label className="block mb-1 font-semibold">Комментарий (необязательно)</label>
-                <input type="text" value={comment} onChange={e => setComment(e.target.value)} className="w-full p-2 border rounded" />
+                <input
+                    type="text"
+                    value={comment}
+                    onChange={(e) => setComment(e.target.value)}
+                    className="w-full p-2 border rounded"
+                />
             </div>
 
-            <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-                Добавить транзакцию
+            <button
+                type="submit"
+                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+            >
+                {transactionToEdit ? 'Редактировать транзакцию' : 'Добавить транзакцию'}
             </button>
         </form>
     );

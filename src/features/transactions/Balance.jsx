@@ -1,9 +1,16 @@
+// src/features/transactions/Balance.jsx
 import React from 'react';
 import { useSelector } from 'react-redux';
 
 const Balance = () => {
     const transactions = useSelector((state) => state.transactions.items);
-    const balance = transactions.reduce((acc, tx) => acc + tx.amount, 0);
+
+    const balance = transactions.reduce((acc, tx) =>
+            tx.type === 'income'
+                ? acc + Number(tx.amount)
+                : acc - Number(tx.amount),
+        0
+    );
 
     return (
         <div className="text-lg mb-4">

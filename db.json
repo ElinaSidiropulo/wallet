@@ -18,20 +18,29 @@
   ],
   "transactions": [
     {
-      "id": "ZFZTfLAUeLNoz0FIc11FO",
-      "type": "expense",
-      "amount": 34,
+      "id": "f3NFjUCLTntRp27kqi-pN",
+      "type": "income",
+      "amount": 45000,
       "category": "food",
-      "date": "2025-05-16",
-      "comment": "pepe"
+      "date": "2025-05-10",
+      "comment": "vkusno",
+      "userId": "aaa@gmail.com"
     },
     {
-      "id": "JMmNkq2poK8FxTjFkgyNV",
-      "type": "income",
-      "amount": 5454,
+      "id": "Y_toAsVaCk8wv2zgdd1ts",
+      "type": "expense",
+      "amount": 5000,
       "category": "salary",
-      "date": "2025-05-17",
-      "comment": "popo"
+      "date": "2025-05-23",
+      "comment": "два"
+    },
+    {
+      "id": "9QTCfQJf-ERLTGQ70-6lK",
+      "type": "income",
+      "amount": 6000,
+      "category": "entertainment",
+      "date": "2025-05-07",
+      "comment": "не ну а че они"
     }
   ],
   "categories": [

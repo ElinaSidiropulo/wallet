@@ -11,18 +11,32 @@ const Register = () => {
 
     const handleRegister = async (e) => {
         e.preventDefault();
+
         if (password !== confirmPassword) {
             alert('Пароли не совпадают');
             return;
         }
 
-        // Запрос на создание нового пользователя
         try {
+            // Получаем всех пользователей
+            const response = await axios.get('http://localhost:5001/users');
+            const users = response.data;
+
+            // Проверяем, есть ли пользователь с таким email
+            const existingUser = users.find(user => user.email === email);
+
+            if (existingUser) {
+                alert('Пользователь с такой почтой уже существует');
+                return;
+            }
+
+            // Если почта уникальна — создаём пользователя
             await axios.post('http://localhost:5001/users', { email, password });
-            dispatch(registerUser({ email, password })); // Логика регистрации через Redux
+            dispatch(registerUser({ email, password })); // или авто-логин, если так настроено
             alert('Регистрация успешна!');
         } catch (error) {
-            console.error('Ошибка при регистрации', error);
+            console.error('Ошибка при регистрации:', error);
+            alert('Произошла ошибка при регистрации');
         }
     };
 
