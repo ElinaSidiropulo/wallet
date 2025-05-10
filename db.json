@@ -1,0 +1,51 @@
+{
+  "users": [
+    {
+      "id": "e09f",
+      "email": "a@gmail.con",
+      "password": "123"
+    },
+    {
+      "id": "feda",
+      "email": "aaa@gmail.com",
+      "password": "aaa"
+    },
+    {
+      "id": "f8f8",
+      "email": "mad@gmail.com",
+      "password": "123"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "ZFZTfLAUeLNoz0FIc11FO",
+      "type": "expense",
+      "amount": 34,
+      "category": "food",
+      "date": "2025-05-16",
+      "comment": "pepe"
+    },
+    {
+      "id": "JMmNkq2poK8FxTjFkgyNV",
+      "type": "income",
+      "amount": 5454,
+      "category": "salary",
+      "date": "2025-05-17",
+      "comment": "popo"
+    }
+  ],
+  "categories": [
+    {
+      "id": "food",
+      "name": "Food"
+    },
+    {
+      "id": "salary",
+      "name": "Salary"
+    },
+    {
+      "id": "entertainment",
+      "name": "Entertainment"
+    }
+  ]
+}
