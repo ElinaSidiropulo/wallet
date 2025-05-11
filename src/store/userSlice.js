@@ -1,26 +1,31 @@
+// store/userSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
+const localUser = localStorage.getItem('user'); // Загружаем пользователя при старте
+
 const initialState = {
-    isAuthenticated: false,
-    user: null,
+    isAuthenticated: !!localUser,
+    user: localUser ? JSON.parse(localUser) : null,
 };
 
 const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        // Экшн для регистрации пользователя
         registerUser: (state, action) => {
             state.isAuthenticated = true;
             state.user = action.payload;
+            localStorage.setItem('user', JSON.stringify(action.payload)); // Сохраняем
         },
         loginUser: (state, action) => {
             state.isAuthenticated = true;
             state.user = action.payload;
+            localStorage.setItem('user', JSON.stringify(action.payload)); // Сохраняем
         },
         logoutUser: (state) => {
             state.isAuthenticated = false;
             state.user = null;
+            localStorage.removeItem('user'); // Удаляем при выходе
         },
     },
 });

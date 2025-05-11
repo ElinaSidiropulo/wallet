@@ -1,4 +1,3 @@
-// src/features/transactions/TransactionList.jsx
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -6,16 +5,21 @@ import { deleteTransaction } from '../../store/transactionsSlice';
 
 const TransactionList = () => {
     const dispatch = useDispatch();
-    const transactions = useSelector(state => state.transactions.items);
-    const categories = useSelector(state => state.categories.items);
+    const transactions = useSelector(state => state.transactions.items || []); // Защищаем от null/undefined
+    const categories = useSelector(state => state.categories.items || []); // Защищаем от null/undefined
+
+    // Логируем транзакции для отладки
+    console.log("Транзакции в списке:", transactions);  // Это поможет увидеть, что загружается
 
     // Сортировка по дате: новые сверху
     const sortedTransactions = [...transactions].sort((a, b) => new Date(b.date) - new Date(a.date));
-
     // Получение названия категории по ID
     const getCategoryName = (categoryId) => {
-        const found = categories.find(cat => cat.id === categoryId);
-        return found ? found.name : '—';
+        // Проверяем на null или undefined перед использованием toString
+        if (categoryId == null) return '—'; // Это проверит и null, и undefined
+
+        const found = categories.find(cat => cat.id === categoryId); // Если categoryId не null, выполняем поиск
+        return found ? found.name : '—'; // Если категория не найдена, показываем дефолтное значение
     };
 
     const handleDelete = (id) => {
@@ -39,7 +43,7 @@ const TransactionList = () => {
                                     <p className="font-bold">
                                         {tx.type === 'income' ? '➕ Доход' : '➖ Расход'}: {tx.amount} ₽
                                     </p>
-                                    <p className="text-sm text-gray-600">Категория: {getCategoryName(tx.category)}</p>
+                                    <p className="text-sm text-gray-600">Категория: {getCategoryName(tx.categoryId)}</p>
                                     {tx.comment && <p className="text-sm text-gray-500">Комментарий: {tx.comment}</p>}
                                 </div>
                                 <div className="text-sm text-gray-500">{new Date(tx.date).toLocaleDateString()}</div>

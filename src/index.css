@@ -1,3 +1,9 @@
+/* Подключение базовых стилей, компонентов и утилит Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Кастомные стили */
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+    import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { registerUser } from '../store/userSlice'; // Действие для регистрации пользователя
 import axios from 'axios';

@@ -3,86 +3,143 @@ import axios from 'axios';
 
 const API = 'http://localhost:5001/transactions';
 
-// Асинхронные экшены
+// Получение транзакций
 export const fetchTransactions = createAsyncThunk(
     'transactions/fetchTransactions',
-    async (userEmail) => {
-        const response = await axios.get(`${API}?userId=${userEmail}`);
-        return response.data;
+    async (_, { getState }) => {
+        const state = getState();
+        const user = state.user.user;
+
+        if (!user?.email) {
+            throw new Error('User email is missing');
+        }
+
+        try {
+            const response = await axios.get(`${API}?userEmail=${user.email}`, {
+                headers: {
+                    Authorization: `Bearer ${user.token}`,
+                },
+            });
+            return response.data;
+        } catch (error) {
+            console.error('Error fetching transactions:', error);
+            throw error;
+        }
     }
 );
 
+// Добавление транзакции
 export const addTransaction = createAsyncThunk(
     'transactions/addTransaction',
-    async (transaction) => {
-        const response = await axios.post(API, transaction);
-        return response.data;
+    async (transaction, { getState }) => {
+        const { user } = getState().user;
+
+        // Добавляем email к объекту транзакции
+        const transactionWithEmail = {
+            ...transaction,
+            userEmail: user.email,
+        };
+
+        try {
+            const response = await axios.post(API, transactionWithEmail, {
+                headers: { Authorization: `Bearer ${user.token}` },
+            });
+            return response.data;
+        } catch (error) {
+            console.error('Error adding transaction:', error);
+            throw error;
+        }
     }
 );
 
+
+// Удаление транзакции
 export const deleteTransaction = createAsyncThunk(
     'transactions/deleteTransaction',
-    async (id) => {
-        await axios.delete(`${API}/${id}`);
-        return id;
+    async (id, { getState }) => {
+        const { user } = getState().user;
+        try {
+            await axios.delete(`${API}/${id}`, {
+                headers: { Authorization: `Bearer ${user.token}` },
+            });
+            return id;
+        } catch (error) {
+            console.error('Error deleting transaction:', error);
+            throw error;
+        }
     }
 );
 
-// Новый экшен для редактирования транзакции
-export const editTransaction = createAsyncThunk(
-    'transactions/editTransaction',
-    async (transaction) => {
-        const response = await axios.put(`${API}/${transaction.id}`, transaction);
-        return response.data;
+export const updateTransaction = createAsyncThunk(
+    'transactions/updateTransaction',
+    async (updatedTransaction, { getState }) => {
+        const { user } = getState().user;
+
+        try {
+            const response = await axios.put(
+                `${API}/${updatedTransaction.id}`,
+                { ...updatedTransaction, userEmail: user.email }, // сохраняем email!
+                {
+                    headers: { Authorization: `Bearer ${user.token}` },
+                }
+            );
+            return response.data;
+        } catch (error) {
+            console.error('Error updating transaction:', error);
+            throw error;
+        }
     }
 );
+
 
 const transactionsSlice = createSlice({
     name: 'transactions',
     initialState: {
         items: [],
         status: 'idle',
+        error: null
     },
-    reducers: {
-        // Синхронные экшены для работы с состоянием (добавление, удаление, редактирование)
-        addTransactionLocally: (state, action) => {
-            state.items.push(action.payload);
-        },
-        deleteTransactionLocally: (state, action) => {
-            state.items = state.items.filter(transaction => transaction.id !== action.payload);
-        },
-        editTransactionLocally: (state, action) => {
-            const index = state.items.findIndex(transaction => transaction.id === action.payload.id);
-            if (index !== -1) {
-                state.items[index] = action.payload;
-            }
-        },
-        setTransactions: (state, action) => {
-            state.items = action.payload;
-        }
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder
+            .addCase(fetchTransactions.pending, (state) => {
+                state.status = 'loading';
+            })
             .addCase(fetchTransactions.fulfilled, (state, action) => {
                 state.items = action.payload;
                 state.status = 'succeeded';
             })
+            .addCase(fetchTransactions.rejected, (state, action) => {
+                state.status = 'failed';
+                state.error = action.error.message;
+            })
             .addCase(addTransaction.fulfilled, (state, action) => {
                 state.items.push(action.payload);
             })
-            .addCase(deleteTransaction.fulfilled, (state, action) => {
-                state.items = state.items.filter(t => t.id !== action.payload);
+            .addCase(addTransaction.rejected, (state, action) => {
+                state.status = 'failed';
+                state.error = action.error.message;
             })
-            .addCase(editTransaction.fulfilled, (state, action) => {
+            .addCase(deleteTransaction.fulfilled, (state, action) => {
+                state.items = state.items.filter(
+                    (transaction) => transaction.id !== action.payload
+                );
+            })
+            .addCase(updateTransaction.fulfilled, (state, action) => {
                 const index = state.items.findIndex(t => t.id === action.payload.id);
                 if (index !== -1) {
                     state.items[index] = action.payload;
                 }
+            })
+            .addCase(updateTransaction.rejected, (state, action) => {
+                state.status = 'failed';
+                state.error = action.error.message;
+            })
+            .addCase(deleteTransaction.rejected, (state, action) => {
+                state.status = 'failed';
+                state.error = action.error.message;
             });
-    }
+    },
 });
-
-// Экспорт новых синхронных экшенов
-export const { addTransactionLocally, deleteTransactionLocally, editTransactionLocally, setTransactions } = transactionsSlice.actions;
 
 export default transactionsSlice.reducer;

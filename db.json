@@ -14,47 +14,147 @@
       "id": "f8f8",
       "email": "mad@gmail.com",
       "password": "123"
+    },
+    {
+      "id": "f329",
+      "email": "la@gmail.com",
+      "password": "la"
+    },
+    {
+      "id": "994d",
+      "email": "ell@gmail.com",
+      "password": "ell"
+    },
+    {
+      "id": "232f",
+      "email": "one@gmail.com",
+      "password": "one"
+    },
+    {
+      "id": "fb19",
+      "email": "two@gmail.com",
+      "password": "two"
     }
   ],
   "transactions": [
     {
-      "id": "f3NFjUCLTntRp27kqi-pN",
+      "id": "prFphJfe4UtokHbQcAD6i",
       "type": "income",
-      "amount": 45000,
+      "amount": 111,
       "category": "food",
-      "date": "2025-05-10",
-      "comment": "vkusno",
-      "userId": "aaa@gmail.com"
-    },
-    {
-      "id": "Y_toAsVaCk8wv2zgdd1ts",
-      "type": "expense",
-      "amount": 5000,
-      "category": "salary",
       "date": "2025-05-23",
-      "comment": "два"
+      "comment": "ell",
+      "userEmail": "ell@gmail.com"
     },
     {
-      "id": "9QTCfQJf-ERLTGQ70-6lK",
       "type": "income",
-      "amount": 6000,
-      "category": "entertainment",
-      "date": "2025-05-07",
-      "comment": "не ну а че они"
+      "amount": 6788,
+      "categoryId": 9,
+      "date": "2025-05-30",
+      "comment": "new one la",
+      "id": "01db",
+      "userEmail": "la@gmail.com"
+    },
+    {
+      "type": "income",
+      "amount": 890,
+      "categoryId": null,
+      "date": "2025-05-30",
+      "comment": "redactions",
+      "id": "96ce",
+      "userEmail": "aaa@gmail.com"
+    },
+    {
+      "id": "5b0b",
+      "type": "income",
+      "amount": 555,
+      "categoryId": 9,
+      "date": "2025-05-16",
+      "comment": "aaaa",
+      "userEmail": "aaa@gmail.com"
+    },
+    {
+      "type": "expense",
+      "amount": 444,
+      "categoryId": "e747",
+      "date": "2025-05-16",
+      "comment": "AAAAA",
+      "id": "1ead",
+      "userEmail": "aaa@gmail.com"
+    },
+    {
+      "type": "income",
+      "amount": 12345,
+      "categoryId": "e747",
+      "date": "2025-05-28",
+      "comment": "aaaa",
+      "id": "aa71",
+      "userEmail": "la@gmail.com"
+    },
+    {
+      "id": "d526",
+      "type": "expense",
+      "amount": 20000,
+      "categoryId": "3deb",
+      "date": "2025-05-01",
+      "comment": "",
+      "userEmail": "la@gmail.com"
+    },
+    {
+      "id": "f6e0",
+      "type": "expense",
+      "amount": 10,
+      "categoryId": "9a57",
+      "date": "2025-05-16",
+      "comment": "one",
+      "userEmail": "one@gmail.com"
+    },
+    {
+      "id": "a816",
+      "type": "income",
+      "amount": 30,
+      "categoryId": "9a57",
+      "date": "2025-05-21",
+      "comment": "one",
+      "userEmail": "one@gmail.com"
+    },
+    {
+      "id": "f52b",
+      "type": "income",
+      "amount": 30,
+      "categoryId": "e747",
+      "date": "2025-05-29",
+      "comment": "one",
+      "userEmail": "one@gmail.com"
+    },
+    {
+      "id": "6c17",
+      "type": "expense",
+      "amount": 10,
+      "categoryId": "e747",
+      "date": "2025-05-16",
+      "comment": "one",
+      "userEmail": "one@gmail.com"
     }
   ],
   "categories": [
     {
-      "id": "food",
-      "name": "Food"
+      "id": "9a57",
+      "name": "категория",
+      "icon": "💰",
+      "color": "#FF5733"
     },
     {
-      "id": "salary",
-      "name": "Salary"
+      "id": "e747",
+      "name": "ддддд",
+      "icon": "💰",
+      "color": "#FF5733"
     },
     {
-      "id": "entertainment",
-      "name": "Entertainment"
+      "id": "3deb",
+      "name": "пгпгпг",
+      "icon": "💰",
+      "color": "#b51a00"
     }
   ]
 }
