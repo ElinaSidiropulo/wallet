@@ -54,6 +54,16 @@
       "id": "83b7",
       "email": "mumu@gmail.com",
       "password": "mumu"
+    },
+    {
+      "id": "a277",
+      "email": "fast@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "8e46",
+      "email": "mickaeljackson@gmail.com",
+      "password": "123"
     }
   ],
   "transactions": [
@@ -65,15 +75,6 @@
       "date": "2025-05-23",
       "comment": "ell",
       "userEmail": "ell@gmail.com"
-    },
-    {
-      "type": "income",
-      "amount": 6788,
-      "categoryId": 9,
-      "date": "2025-05-30",
-      "comment": "new one la",
-      "id": "01db",
-      "userEmail": "la@gmail.com"
     },
     {
       "type": "income",
@@ -101,24 +102,6 @@
       "comment": "AAAAA",
       "id": "1ead",
       "userEmail": "aaa@gmail.com"
-    },
-    {
-      "type": "income",
-      "amount": 12345,
-      "categoryId": null,
-      "date": "2025-05-28",
-      "comment": "aaaa",
-      "id": "aa71",
-      "userEmail": "la@gmail.com"
-    },
-    {
-      "id": "d526",
-      "type": "expense",
-      "amount": 20000,
-      "categoryId": null,
-      "date": "2025-05-01",
-      "comment": "",
-      "userEmail": "la@gmail.com"
     },
     {
       "id": "f6e0",
@@ -164,15 +147,6 @@
       "comment": "idk",
       "id": "5f83",
       "userEmail": "mumu@gmail.com"
-    },
-    {
-      "id": "26c2",
-      "type": "expense",
-      "amount": 2000,
-      "categoryId": null,
-      "date": "2025-05-22",
-      "comment": "ла",
-      "userEmail": "la@gmail.com"
     },
     {
       "id": "7652",
@@ -245,6 +219,87 @@
       "date": "2025-03-06",
       "comment": "mad",
       "userEmail": "mad@gmail.com"
+    },
+    {
+      "id": "ac04",
+      "type": "expense",
+      "amount": 1000,
+      "categoryId": "ba4a",
+      "date": "2025-05-12",
+      "comment": "",
+      "userEmail": "la@gmail.com"
+    },
+    {
+      "id": "c8dd",
+      "type": "income",
+      "amount": 100,
+      "categoryId": "ae4d",
+      "date": "2024-12-17",
+      "comment": "Michael",
+      "userEmail": "mickaeljackson@gmail.com"
+    },
+    {
+      "id": "7b6b",
+      "type": "expense",
+      "amount": 1000,
+      "categoryId": "c72a7db9-dd92-4882-916e-891598607537",
+      "date": "2024-12-20",
+      "comment": "Michael",
+      "userEmail": "mickaeljackson@gmail.com"
+    },
+    {
+      "id": "4328",
+      "type": "income",
+      "amount": 2000,
+      "categoryId": "9005d842-16c3-4b9e-be6a-e4b1ba4a992c",
+      "date": "2025-01-15",
+      "comment": "Michael",
+      "userEmail": "mickaeljackson@gmail.com"
+    },
+    {
+      "id": "1bdc",
+      "type": "expense",
+      "amount": 200,
+      "categoryId": "ae4d",
+      "date": "2025-01-24",
+      "comment": "Michael",
+      "userEmail": "mickaeljackson@gmail.com"
+    },
+    {
+      "id": "0a93",
+      "type": "income",
+      "amount": 345,
+      "categoryId": "c72a7db9-dd92-4882-916e-891598607537",
+      "date": "2025-03-27",
+      "comment": "Michael",
+      "userEmail": "mickaeljackson@gmail.com"
+    },
+    {
+      "id": "1b5e",
+      "type": "expense",
+      "amount": 34,
+      "categoryId": "c72a7db9-dd92-4882-916e-891598607537",
+      "date": "2025-03-27",
+      "comment": "Michael",
+      "userEmail": "mickaeljackson@gmail.com"
+    },
+    {
+      "id": "715d",
+      "type": "expense",
+      "amount": 900,
+      "categoryId": "c72a7db9-dd92-4882-916e-891598607537",
+      "date": "2025-05-12",
+      "comment": "Michael",
+      "userEmail": "mickaeljackson@gmail.com"
+    },
+    {
+      "id": "44ff",
+      "type": "income",
+      "amount": 9000,
+      "categoryId": "c72a7db9-dd92-4882-916e-891598607537",
+      "date": "2025-05-12",
+      "comment": "Michael",
+      "userEmail": "mickaeljackson@gmail.com"
     }
   ],
   "categories": [
@@ -331,6 +386,62 @@
       "icon": "🏠",
       "color": "#ffc4ab",
       "userEmail": "mad@gmail.com"
+    },
+    {
+      "id": "dd8fe15f-4bbd-4874-8aed-d1d6615cf232",
+      "name": "Продукты",
+      "icon": "🛒",
+      "color": "#4CAF50",
+      "userEmail": "fast@gmail.com"
+    },
+    {
+      "id": "967b7fbc-fd30-4023-832b-7695f8f96f4f",
+      "name": "Транспорт",
+      "icon": "🚌",
+      "color": "#2196F3",
+      "userEmail": "fast@gmail.com"
+    },
+    {
+      "id": "5fd3179a-fe10-4c90-956c-d1c14736ad3c",
+      "name": "Развлечения",
+      "icon": "🎮",
+      "color": "#FF9800",
+      "userEmail": "fast@gmail.com"
+    },
+    {
+      "id": "ba4a",
+      "name": "ноготочки",
+      "icon": "🚗",
+      "color": "#e392fe",
+      "userEmail": "la@gmail.com"
+    },
+    {
+      "id": "9005d842-16c3-4b9e-be6a-e4b1ba4a992c",
+      "name": "Продукты",
+      "icon": "🛒",
+      "color": "#4CAF50",
+      "userEmail": "mickaeljackson@gmail.com"
+    },
+    {
+      "id": "c72a7db9-dd92-4882-916e-891598607537",
+      "name": "Транспорт",
+      "icon": "🚌",
+      "color": "#2196F3",
+      "userEmail": "mickaeljackson@gmail.com"
+    },
+    {
+      "id": "ae4d",
+      "name": "Leaving Neverland",
+      "icon": "🚗",
+      "color": "#e392fe",
+      "userEmail": "mickaeljackson@gmail.com"
+    },
+    {
+      "id": "7c7b",
+      "name": "Зарплата",
+      "icon": "💰",
+      "color": "#96d35f",
+      "userEmail": "mickaeljackson@gmail.com"
     }
   ]
 }
