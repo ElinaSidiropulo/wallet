@@ -4,40 +4,59 @@ import axios from 'axios';
 const API = 'http://localhost:5001/categories';
 
 // Получение категорий
+// Пример асинхронного thunk'а в categoriesSlice:
 export const fetchCategories = createAsyncThunk(
     'categories/fetchCategories',
     async (_, { getState }) => {
-        const { user } = getState().user; // Предполагается, что token хранится в userSlice
+        const { user } = getState().user;
+
         const response = await axios.get(API, {
             headers: { Authorization: `Bearer ${user.token}` },
+            params: { userEmail: user.email }, // фильтрация по email
         });
+
         return response.data;
     }
 );
+
+
+
 
 // Создание категории
 export const createCategory = createAsyncThunk(
     'categories/createCategory',
     async (category, { getState }) => {
         const { user } = getState().user;
-        const response = await axios.post(API, category, {
+
+        const categoryWithUser = {
+            ...category,
+            userEmail: user.email, // добавляем email пользователя
+        };
+
+        const response = await axios.post(API, categoryWithUser, {
             headers: { Authorization: `Bearer ${user.token}` },
         });
+
         return response.data;
     }
 );
+
 
 // Удаление категории
 export const deleteCategory = createAsyncThunk(
     'categories/deleteCategory',
     async (id, { getState }) => {
         const { user } = getState().user;
+
         await axios.delete(`${API}/${id}`, {
             headers: { Authorization: `Bearer ${user.token}` },
+            data: { userEmail: user.email }, // если сервер требует
         });
+
         return id;
     }
 );
+
 
 const categoriesSlice = createSlice({
     name: 'categories',

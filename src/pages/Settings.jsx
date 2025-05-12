@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCategories, createCategory, deleteCategory } from '../store/categoriesSlice';
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 
 const Settings = () => {
     const dispatch = useDispatch();
@@ -30,17 +29,6 @@ const Settings = () => {
     const handleDeleteCategory = (id) => {
         dispatch(deleteCategory(id));
     };
-
-    // Преобразование категорий в данные для диаграммы с учетом их долей
-    const pieData = categories.map((cat) => ({
-        name: cat.name,
-        value: Math.floor(Math.random() * 40) + 10, // Сделаем диапазон от 10 до 50 для каждого значения
-        color: cat.color || '#FF5733',
-    }));
-
-    // Рассчитываем сумму всех категорий, чтобы все делилось на 100%
-    const total = pieData.reduce((sum, cat) => sum + cat.value, 0);
-    pieData.forEach(cat => cat.value = (cat.value / total) * 100);  // Преобразуем в проценты
 
     return (
         <div className="container mx-auto p-8 max-w-4xl bg-gray-800 rounded-2xl shadow-2xl">
@@ -84,29 +72,6 @@ const Settings = () => {
             {/* Загрузка и ошибки */}
             {status === 'loading' && <p className="text-center text-gray-300 mt-4">Загрузка...</p>}
             {error && <p className="text-center text-red-500 mt-4">{error}</p>}
-
-            {/* Диаграмма распределения категорий */}
-            <div className="mb-12 mt-8">
-                <h2 className="text-3xl font-semibold text-center mb-6 text-white">Распределение расходов по категориям</h2>
-                {pieData.length > 0 ? (
-                    <ResponsiveContainer width="100%" height={350}>
-                        <PieChart>
-                            <Pie dataKey="value" data={pieData} cx="50%" cy="50%" outerRadius={140} label>
-                                {pieData.map((entry, index) => (
-                                    <Cell key={index} fill={entry.color} />
-                                ))}
-                            </Pie>
-                            <Tooltip
-                                contentStyle={{ backgroundColor: '#2d2d2d', borderRadius: '8px' }}
-                                labelStyle={{ color: 'white' }}
-                                itemStyle={{ color: 'white' }}
-                            />
-                        </PieChart>
-                    </ResponsiveContainer>
-                ) : (
-                    <p className="text-center text-gray-500">Нет данных для отображения</p>
-                )}
-            </div>
 
             {/* Список категорий */}
             <ul className="space-y-6">

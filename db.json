@@ -34,6 +34,26 @@
       "id": "fb19",
       "email": "two@gmail.com",
       "password": "two"
+    },
+    {
+      "id": "e427",
+      "email": "nana@gmail.com",
+      "password": "nana"
+    },
+    {
+      "id": "0fdb",
+      "email": "mimi@gmail.com",
+      "password": "mimi"
+    },
+    {
+      "id": "b046",
+      "email": "bebe@gmail.com",
+      "password": "bebe"
+    },
+    {
+      "id": "83b7",
+      "email": "mumu@gmail.com",
+      "password": "mumu"
     }
   ],
   "transactions": [
@@ -76,7 +96,7 @@
     {
       "type": "expense",
       "amount": 444,
-      "categoryId": "e747",
+      "categoryId": null,
       "date": "2025-05-16",
       "comment": "AAAAA",
       "id": "1ead",
@@ -85,7 +105,7 @@
     {
       "type": "income",
       "amount": 12345,
-      "categoryId": "e747",
+      "categoryId": null,
       "date": "2025-05-28",
       "comment": "aaaa",
       "id": "aa71",
@@ -95,7 +115,7 @@
       "id": "d526",
       "type": "expense",
       "amount": 20000,
-      "categoryId": "3deb",
+      "categoryId": null,
       "date": "2025-05-01",
       "comment": "",
       "userEmail": "la@gmail.com"
@@ -104,7 +124,7 @@
       "id": "f6e0",
       "type": "expense",
       "amount": 10,
-      "categoryId": "9a57",
+      "categoryId": null,
       "date": "2025-05-16",
       "comment": "one",
       "userEmail": "one@gmail.com"
@@ -113,48 +133,204 @@
       "id": "a816",
       "type": "income",
       "amount": 30,
-      "categoryId": "9a57",
+      "categoryId": null,
       "date": "2025-05-21",
       "comment": "one",
       "userEmail": "one@gmail.com"
     },
     {
-      "id": "f52b",
       "type": "income",
-      "amount": 30,
-      "categoryId": "e747",
-      "date": "2025-05-29",
-      "comment": "one",
-      "userEmail": "one@gmail.com"
+      "amount": 3000,
+      "categoryId": null,
+      "date": "2025-05-15",
+      "comment": "nanana",
+      "id": "91b0",
+      "userEmail": "nana@gmail.com"
     },
     {
-      "id": "6c17",
+      "id": "02b6",
       "type": "expense",
-      "amount": 10,
-      "categoryId": "e747",
+      "amount": 2000,
+      "categoryId": null,
+      "date": "2025-05-21",
+      "comment": "nana",
+      "userEmail": "nana@gmail.com"
+    },
+    {
+      "type": "expense",
+      "amount": 2000,
+      "categoryId": null,
       "date": "2025-05-16",
-      "comment": "one",
-      "userEmail": "one@gmail.com"
+      "comment": "idk",
+      "id": "5f83",
+      "userEmail": "mumu@gmail.com"
+    },
+    {
+      "id": "26c2",
+      "type": "expense",
+      "amount": 2000,
+      "categoryId": null,
+      "date": "2025-05-22",
+      "comment": "ла",
+      "userEmail": "la@gmail.com"
+    },
+    {
+      "id": "7652",
+      "type": "expense",
+      "amount": 100,
+      "categoryId": "15b1",
+      "date": "2025-05-12",
+      "comment": "mad",
+      "userEmail": "mad@gmail.com"
+    },
+    {
+      "id": "73ae",
+      "type": "expense",
+      "amount": 200,
+      "categoryId": "6e1a",
+      "date": "2025-05-12",
+      "comment": "mad",
+      "userEmail": "mad@gmail.com"
+    },
+    {
+      "id": "85af",
+      "type": "income",
+      "amount": 500,
+      "categoryId": "6e1a",
+      "date": "2025-05-12",
+      "comment": "mad",
+      "userEmail": "mad@gmail.com"
+    },
+    {
+      "id": "f9a9",
+      "type": "expense",
+      "amount": 100,
+      "categoryId": "6e1a",
+      "date": "2025-05-12",
+      "comment": "mad",
+      "userEmail": "mad@gmail.com"
+    },
+    {
+      "id": "76e4",
+      "type": "expense",
+      "amount": 100,
+      "categoryId": "6e1a",
+      "date": "2025-05-02",
+      "comment": "mad",
+      "userEmail": "mad@gmail.com"
+    },
+    {
+      "id": "b5a2",
+      "type": "income",
+      "amount": 100,
+      "categoryId": "7d77",
+      "date": "2025-05-12",
+      "comment": "la",
+      "userEmail": "la@gmail.com"
+    },
+    {
+      "id": "757c",
+      "type": "income",
+      "amount": 100,
+      "categoryId": "15b1",
+      "date": "2025-04-09",
+      "comment": "mad",
+      "userEmail": "mad@gmail.com"
+    },
+    {
+      "id": "a641",
+      "type": "income",
+      "amount": 1000,
+      "categoryId": "15b1",
+      "date": "2025-03-06",
+      "comment": "mad",
+      "userEmail": "mad@gmail.com"
     }
   ],
   "categories": [
     {
-      "id": "9a57",
-      "name": "категория",
-      "icon": "💰",
-      "color": "#FF5733"
+      "id": "abb8981d-49b0-4d0d-91fd-c7d647c71d28",
+      "name": "Продукты",
+      "icon": "🛒",
+      "color": "#4CAF50",
+      "userEmail": "mimi@gmail.com"
     },
     {
-      "id": "e747",
-      "name": "ддддд",
-      "icon": "💰",
-      "color": "#FF5733"
+      "id": "a7618a2d-8353-42ed-b280-7fca2883494a",
+      "name": "Транспорт",
+      "icon": "🚌",
+      "color": "#2196F3",
+      "userEmail": "mimi@gmail.com"
     },
     {
-      "id": "3deb",
-      "name": "пгпгпг",
-      "icon": "💰",
-      "color": "#b51a00"
+      "id": "d3518c16-3805-42ca-bb07-fe96a5bd661c",
+      "name": "Развлечения",
+      "icon": "🎮",
+      "color": "#FF9800",
+      "userEmail": "mimi@gmail.com"
+    },
+    {
+      "id": "d26c36ad-c473-4654-8967-9d5b5c99d502",
+      "name": "Продукты",
+      "icon": "🛒",
+      "color": "#4CAF50",
+      "userEmail": "bebe@gmail.com"
+    },
+    {
+      "id": "7066c8bb-a8c1-4b80-9625-36c9357fcf4f",
+      "name": "Транспорт",
+      "icon": "🚌",
+      "color": "#2196F3",
+      "userEmail": "bebe@gmail.com"
+    },
+    {
+      "id": "3a3e464f-fab8-4cd3-8ee7-2956fb64a21f",
+      "name": "Развлечения",
+      "icon": "🎮",
+      "color": "#FF9800",
+      "userEmail": "bebe@gmail.com"
+    },
+    {
+      "id": "04087790-27d4-4ecc-85c8-59816fa03414",
+      "name": "Продукты",
+      "icon": "🛒",
+      "color": "#4CAF50",
+      "userEmail": "mumu@gmail.com"
+    },
+    {
+      "id": "dd1d1f60-d1b8-420e-8973-18b0005efa18",
+      "name": "Транспорт",
+      "icon": "🚌",
+      "color": "#2196F3",
+      "userEmail": "mumu@gmail.com"
+    },
+    {
+      "id": "96dc080e-6a2a-42b6-bd7e-8ccf78c949cc",
+      "name": "Развлечения",
+      "icon": "🎮",
+      "color": "#FF9800",
+      "userEmail": "mumu@gmail.com"
+    },
+    {
+      "id": "7d77",
+      "name": "еда",
+      "icon": "🍽️",
+      "color": "#f2f7b7",
+      "userEmail": "la@gmail.com"
+    },
+    {
+      "id": "15b1",
+      "name": "комиксы скумфеу",
+      "icon": "🛒",
+      "color": "#94e3fe",
+      "userEmail": "mad@gmail.com"
+    },
+    {
+      "id": "6e1a",
+      "name": "коммуналка",
+      "icon": "🏠",
+      "color": "#ffc4ab",
+      "userEmail": "mad@gmail.com"
     }
   ]
 }

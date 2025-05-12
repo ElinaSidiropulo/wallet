@@ -1,7 +1,9 @@
-    import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { registerUser } from '../store/userSlice'; // Действие для регистрации пользователя
 import axios from 'axios';
+import { createDefaultCategories } from '../utils/createDefaultCategories';
+
 
 const Register = () => {
     const [email, setEmail] = useState('');
@@ -18,21 +20,18 @@ const Register = () => {
         }
 
         try {
-            // Получаем всех пользователей
             const response = await axios.get('http://localhost:5001/users');
             const users = response.data;
 
-            // Проверяем, есть ли пользователь с таким email
             const existingUser = users.find(user => user.email === email);
-
             if (existingUser) {
                 alert('Пользователь с такой почтой уже существует');
                 return;
             }
 
-            // Если почта уникальна — создаём пользователя
             await axios.post('http://localhost:5001/users', { email, password });
-            dispatch(registerUser({ email, password })); // или авто-логин, если так настроено
+            dispatch(registerUser({ email, password }));
+            await createDefaultCategories(email); // ← вот здесь
             alert('Регистрация успешна!');
         } catch (error) {
             console.error('Ошибка при регистрации:', error);
