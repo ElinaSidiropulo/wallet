@@ -82,7 +82,7 @@ const AddTransactionForm = ({ transactionToEdit }) => {
 
                 {/* Сумма */}
                 <div className="mb-6">
-                    <label className="block text-sm font-medium text-indigo-200 mb-2">Сумма (₽)</label>
+                    <label className="block text-sm font-medium text-indigo-200 mb-2">Сумма ($)</label>
                     <input
                         type="number"
                         value={amount}

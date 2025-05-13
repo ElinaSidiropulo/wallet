@@ -39,7 +39,7 @@ const Dashboard = () => {
                 {/* Header */}
                 <header className="flex justify-between items-center gap-4 w-full">
                     <h1 className="text-3xl sm:text-4xl font-bold flex items-center text-white">
-                        <span className="mr-2">💼</span> Онлайн-кошелёк
+                        <span className="mr-2">💼</span> Мои транзакции
                     </h1>
                     <motion.button
                         onClick={handleLogout}
@@ -61,7 +61,7 @@ const Dashboard = () => {
                         aria-label="Go to settings"
                     >
                         <Cog6ToothIcon className="w-5 h-5 mr-1" />
-                        Настройки
+                        Категории
                     </Link>
                     <Link
                         to="/stats"

@@ -207,7 +207,7 @@ const Stats = () => {
                         transition={{ delay: 0.6 }}
                         className="bg-white/10 backdrop-blur-xl shadow-2xl rounded-3xl p-6 border border-indigo-400/30 md:col-span-2"
                     >
-                        <h2 className="text-2xl font-semibold text-white mb-4 text-center">Линейная диаграмма доходов (6 месяцев)</h2>
+                        <h2 className="text-2xl font-semibold text-white mb-4 text-center">Доходы за 6 месяцев</h2>
                         {incomePerMonth.some((d) => d.income > 0) ? (
                             <ResponsiveContainer width="100%" height={300}>
                                 <LineChart data={incomePerMonth}>

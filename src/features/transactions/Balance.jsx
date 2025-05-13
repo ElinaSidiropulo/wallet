@@ -12,7 +12,7 @@ const Balance = () => {
     if (!transactions || transactions.length === 0) {
         return (
             <div className="text-lg mb-4">
-                <strong>Баланс:</strong> 0.00 ₽
+                <strong>Баланс:</strong> 0.00 $
             </div>
         );
     }
@@ -26,7 +26,7 @@ const Balance = () => {
 
     return (
         <div className="text-lg mb-4">
-            <strong>Баланс:</strong> {balance.toFixed(2)} ₽
+            <strong>Баланс:</strong> {balance.toFixed(2)} $
         </div>
     );
 };

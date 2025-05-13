@@ -62,7 +62,7 @@ const TransactionList = () => {
                                 </div>
                                 <div>
                                     <p className="text-white font-medium">
-                                        {tx.type === 'income' ? 'Доход' : 'Расход'}: {tx.amount} ₽
+                                        {tx.type === 'income' ? 'Доход' : 'Расход'}: {tx.amount} $
                                     </p>
                                     <p className="text-indigo-300 text-sm">
                                         Категория: {getCategoryName(tx.categoryId)}

@@ -64,6 +64,11 @@
       "id": "8e46",
       "email": "mickaeljackson@gmail.com",
       "password": "123"
+    },
+    {
+      "id": "c009",
+      "email": "user@gmail.com",
+      "password": "user"
     }
   ],
   "transactions": [
@@ -194,12 +199,12 @@
       "userEmail": "mad@gmail.com"
     },
     {
-      "id": "b5a2",
       "type": "income",
       "amount": 100,
       "categoryId": "7d77",
       "date": "2025-05-12",
-      "comment": "la",
+      "comment": "lalala",
+      "id": "b5a2",
       "userEmail": "la@gmail.com"
     },
     {
@@ -300,6 +305,294 @@
       "date": "2025-05-12",
       "comment": "Michael",
       "userEmail": "mickaeljackson@gmail.com"
+    },
+    {
+      "id": "c909",
+      "type": "expense",
+      "amount": 100,
+      "categoryId": "a78793e4-8cc4-4915-9e30-f51dc18639bc",
+      "date": "2024-12-18",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "7109",
+      "type": "expense",
+      "amount": 80,
+      "categoryId": "253b6c0f-e6b1-4046-9fcc-e36864154ddb",
+      "date": "2024-12-19",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "1e4d",
+      "type": "expense",
+      "amount": 50,
+      "categoryId": "66121d8a-9fdd-4caf-b173-26870eae4d05",
+      "date": "2024-12-17",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "163a",
+      "type": "income",
+      "amount": 200,
+      "categoryId": "199a",
+      "date": "2024-12-21",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "551b",
+      "type": "income",
+      "amount": 150,
+      "categoryId": "d438",
+      "date": "2024-12-21",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "c650",
+      "type": "expense",
+      "amount": 111,
+      "categoryId": "a78793e4-8cc4-4915-9e30-f51dc18639bc",
+      "date": "2025-01-16",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "9fc0",
+      "type": "expense",
+      "amount": 83,
+      "categoryId": "253b6c0f-e6b1-4046-9fcc-e36864154ddb",
+      "date": "2025-01-25",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "a1c4",
+      "type": "expense",
+      "amount": 62,
+      "categoryId": "66121d8a-9fdd-4caf-b173-26870eae4d05",
+      "date": "2025-01-21",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "5a24",
+      "type": "income",
+      "amount": 245,
+      "categoryId": "199a",
+      "date": "2025-01-21",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "7bdc",
+      "type": "income",
+      "amount": 96,
+      "categoryId": "d438",
+      "date": "2025-01-24",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "1de3",
+      "type": "expense",
+      "amount": 150,
+      "categoryId": "a78793e4-8cc4-4915-9e30-f51dc18639bc",
+      "date": "2025-02-19",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "ac6c",
+      "type": "expense",
+      "amount": 96,
+      "categoryId": "253b6c0f-e6b1-4046-9fcc-e36864154ddb",
+      "date": "2025-02-15",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "1a6e",
+      "type": "expense",
+      "amount": 72,
+      "categoryId": "66121d8a-9fdd-4caf-b173-26870eae4d05",
+      "date": "2025-02-18",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "8896",
+      "type": "income",
+      "amount": 71,
+      "categoryId": "199a",
+      "date": "2025-02-12",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "29f0",
+      "type": "income",
+      "amount": 50,
+      "categoryId": "d438",
+      "date": "2025-02-22",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "94c2",
+      "type": "expense",
+      "amount": 95,
+      "categoryId": "a78793e4-8cc4-4915-9e30-f51dc18639bc",
+      "date": "2025-03-20",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "4ad4",
+      "type": "expense",
+      "amount": 77,
+      "categoryId": "253b6c0f-e6b1-4046-9fcc-e36864154ddb",
+      "date": "2025-03-12",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "4a66",
+      "type": "expense",
+      "amount": 55,
+      "categoryId": "66121d8a-9fdd-4caf-b173-26870eae4d05",
+      "date": "2025-03-21",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "240d",
+      "type": "expense",
+      "amount": 15,
+      "categoryId": "199a",
+      "date": "2025-03-13",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "5281",
+      "type": "income",
+      "amount": 210,
+      "categoryId": "199a",
+      "date": "2025-03-18",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "8020",
+      "type": "income",
+      "amount": 85,
+      "categoryId": "d438",
+      "date": "2025-03-30",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "acb6",
+      "type": "expense",
+      "amount": 78,
+      "categoryId": "a78793e4-8cc4-4915-9e30-f51dc18639bc",
+      "date": "2025-04-03",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "9455",
+      "type": "expense",
+      "amount": 65,
+      "categoryId": "253b6c0f-e6b1-4046-9fcc-e36864154ddb",
+      "date": "2025-04-02",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "507f",
+      "type": "expense",
+      "amount": 20,
+      "categoryId": "66121d8a-9fdd-4caf-b173-26870eae4d05",
+      "date": "2025-04-19",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "df8b",
+      "type": "expense",
+      "amount": 16,
+      "categoryId": "199a",
+      "date": "2025-04-09",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "4029",
+      "type": "income",
+      "amount": 45,
+      "categoryId": "199a",
+      "date": "2025-04-19",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "2e70",
+      "type": "income",
+      "amount": 25,
+      "categoryId": "d438",
+      "date": "2025-04-19",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "8f5e",
+      "type": "expense",
+      "amount": 55,
+      "categoryId": "a78793e4-8cc4-4915-9e30-f51dc18639bc",
+      "date": "2025-05-08",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "69e4",
+      "type": "expense",
+      "amount": 46,
+      "categoryId": "253b6c0f-e6b1-4046-9fcc-e36864154ddb",
+      "date": "2025-05-16",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "7755",
+      "type": "expense",
+      "amount": 23,
+      "categoryId": "66121d8a-9fdd-4caf-b173-26870eae4d05",
+      "date": "2025-05-19",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "4d22",
+      "type": "income",
+      "amount": 67,
+      "categoryId": "199a",
+      "date": "2025-05-19",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "7125",
+      "type": "income",
+      "amount": 326,
+      "categoryId": "199a",
+      "date": "2025-05-23",
+      "comment": "user",
+      "userEmail": "user@gmail.com"
     }
   ],
   "categories": [
@@ -442,6 +735,41 @@
       "icon": "💰",
       "color": "#96d35f",
       "userEmail": "mickaeljackson@gmail.com"
+    },
+    {
+      "id": "a78793e4-8cc4-4915-9e30-f51dc18639bc",
+      "name": "Продукты",
+      "icon": "🛒",
+      "color": "#4CAF50",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "253b6c0f-e6b1-4046-9fcc-e36864154ddb",
+      "name": "Транспорт",
+      "icon": "🚌",
+      "color": "#2196F3",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "66121d8a-9fdd-4caf-b173-26870eae4d05",
+      "name": "Развлечения",
+      "icon": "🎮",
+      "color": "#FF9800",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "199a",
+      "name": "Работа1",
+      "icon": "💰",
+      "color": "#f4a4c0",
+      "userEmail": "user@gmail.com"
+    },
+    {
+      "id": "d438",
+      "name": "Работа2",
+      "icon": "💰",
+      "color": "#b18cfe",
+      "userEmail": "user@gmail.com"
     }
   ]
 }
